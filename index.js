@@ -38,16 +38,16 @@ function start() {
                     var htmlOne = generateHTML({ ...answers, stars, ...response.data })
                     //console.log(htmlOne)
                     //  look for a package to convert html to pdf
-                    fs.writeFile("generateHTML.pdf",htmlOne, function (err){
-                        if(err){
-                            throw err;
-                        }
-                        console.log('successfully wrote file');
-                    })
-                    const html = fs.readFileSync('./generateHTML.js', 'utf8');
+                    // fs.writeFile("generateHTML.pdf",htmlOne, function (err){
+                    //     if(err){
+                    //         throw err;
+                    //     }
+                    //     console.log('successfully wrote file');
+                    // })
+                    // const html = fs.readFileSync('./generateHTML.js', 'utf8');
                     const options = { format: 'Letter' };
 
-                    pdf.create(html, options).toFile('./generateHTML.js', function (err, res) {
+                    pdf.create(htmlOne, options).toFile('./generateHTML.pdf', function (err, res) {
                         if (err) return console.log(err);
                         console.log(res);
                     })
