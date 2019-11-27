@@ -6,10 +6,10 @@ const colors = {
     photoBorderColor: "#black"
   },
   blue: {
-    wrapperBackground: "#5F64D3",
-    headerBackground: "#26175A",
+    wrapperBackground: "black",
+    headerBackground: "blue",
     headerColor: "white",
-    photoBorderColor: "#73448C"
+    photoBorderColor: "#C5CFB8"
   },
   pink: {
     wrapperBackground: "#879CDF",
@@ -171,13 +171,19 @@ function generateHTML(data) {
           body { 
             zoom: .75; 
           } 
+          img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+          }
          }
       </style>
    </head>
    <body>
       <div class="wrapper">
          <div class="photo-header">
-            <img src="${data.avatar_url}" alt="Photo of ${data.name}" />
+            <img src= "${data.avatar_url}" alt="Photo of ${data.name}"/>
             <h1>Hi!</h1>
             <h2>
             My name is ${data.name}!</h1>
